@@ -26,26 +26,26 @@ This automation suite aims to cover the following key features and user flows of
 
 *(This section will be populated with specific test suites/features as they are developed. Examples below)*
 - **User Account Management:**
-    - [ ] Successful User Registration
-    - [ ] User Login with Valid Credentials
-    - [ ] User Login with Invalid Credentials
-    - [ ] User Logout
+    - Successful User Registration
+    - User Login with Valid Credentials
+    - User Login with Invalid Credentials
+    - User Logout
 - **Product Discovery:**
-    - [ ] Search for Products by Name/Keyword
-    - [ ] Navigate to Product Categories
-    - [ ] Basic Filtering and Sorting on PLP
+    - Search for Products by Name/Keyword
+    - Navigate to Product Categories
+    - Basic Filtering and Sorting on PLP
 - **Product Detail Page (PDP):**
-    - [ ] Select Product Options (e.g., Size, Color)
-    - [ ] Update Product Quantity
-    - [ ] Add Product to Cart
+    - Select Product Options (e.g., Size, Color)
+    - Update Product Quantity
+    - Add Product to Cart
 - **Shopping Cart:**
-    - [ ] Verify Cart Contents
-    - [ ] Update Item Quantity in Cart
-    - [ ] Remove Item from Cart
-    - [ ] Apply Valid Discount Code
+    - Verify Cart Contents
+    - Update Item Quantity in Cart
+    - Remove Item from Cart
+    - Apply Valid Discount Code
 - **Checkout Process:**
-    - [ ] E2E Guest User Checkout
-    - [ ] E2E Registered User Checkout
+    - E2E Guest User Checkout
+    - E2E Registered User Checkout
 
 ## 🚦 Getting Started (Local Setup)
 
@@ -69,13 +69,14 @@ Ensure you have the following installed on your system:
 
 
 3.  **Install project dependencies:**
+4.  
     Using npm:
 
     npm install
 
     This command will download Cypress and all other necessary packages defined in `package.json` (once we create `package.json` in the local setup steps).
 
-4.  **(Optional) Environment Configuration:**
+5.  **(Optional) Environment Configuration:**
     *(If environment-specific configurations are used, e.g., via `.env` files or `cypress.config.ts`, instructions will be provided here. For now, we will likely use the base URL in `cypress.config.ts`.)*
 
 ## ධ Running Tests
@@ -87,6 +88,7 @@ Cypress tests can be run in two main modes:
 This mode opens the Cypress application, allowing you to see tests run in real-time, debug, and view command logs. This is recommended for writing and debugging tests.
 
 To open the Test Runner:
+
 Using npm:
 
 npx cypress open
@@ -95,11 +97,13 @@ npx cypress open
 This mode runs tests in the background without launching a browser UI. It's ideal for running tests in CI/CD pipelines or for full regression runs. Screenshots and videos are typically recorded automatically for failing tests in this mode.
 
 To run all tests headlessly:
+
 Using npm:
 
 npx cypress run
 
 To run tests from a specific spec file headlessly:
+
 Using npm:
 
 npx cypress run --spec "cypress/e2e/path/to/your/specfile.cy.ts"
@@ -107,6 +111,7 @@ npx cypress run --spec "cypress/e2e/path/to/your/specfile.cy.ts"
 ## 📂 Project Structure
 The project follows a standard Cypress structure, with key customizations for organization and maintainability:
 
+```
 cypress-automation-magento/
 ├── cypress/
 │   ├── e2e/                     # Contains all test spec files (e.g., *.cy.ts)
@@ -126,6 +131,7 @@ cypress-automation-magento/
 ├── package-lock.json (or yarn.lock) # Records exact versions of dependencies
 ├── README.md                    # This file: project overview and instructions
 └── tsconfig.json                # TypeScript compiler options
+```
 
 ## 🏛️ Page Object Model (POM)
 This project utilizes the Page Object Model (POM) design pattern to enhance test maintenance and reduce code duplication.
@@ -139,13 +145,13 @@ Page objects are typically stored in the cypress/pageObjects/ directory.
 Screenshots & Videos: Cypress automatically captures screenshots on test failure and records videos of test runs in headless mode. These are stored in cypress/screenshots/ and cypress/videos/ respectively (though typically gitignored, examples might be referenced for portfolio purposes if a failure is being discussed).
 
 ## ✨ Best Practices Demonstrated
-This project aims to demonstrate several test automation best practices:
 
-Clear Naming Conventions: For test files, suites, test cases, and POM elements.
-Modularity & Reusability: Through POM and custom commands.
-Readability: Well-structured tests and comments where necessary.
-Maintainability: Designing tests to be resilient to minor UI changes (via POM).
-Data Management: Using fixtures for test data where appropriate.
-Explicit Waits (Avoidance): Leveraging Cypress's built-in retry-ability and avoiding unnecessary explicit waits.
-Configuration Management: Using cypress.config.ts for global settings.
-TypeScript for Type Safety: Reducing errors and improving code quality.
+This project aims to demonstrate several test automation best practices:
+- **Clear Naming Conventions:** For test files, suites, test cases, and POM elements.
+- **Modularity & Reusability:** Through POM and custom commands.
+- **Readability:** Well-structured tests and comments where necessary.
+- **Maintainability:** Designing tests to be resilient to minor UI changes (via POM).
+- **Data Management:** Using fixtures for test data where appropriate.
+- **Explicit Waits (Avoidance):** Leveraging Cypress's built-in retry-ability and avoiding unnecessary explicit waits.
+- **Configuration Management:** Using `cypress.config.ts` for global settings.
+- **TypeScript for Type Safety:** Reducing errors and improving code quality..
